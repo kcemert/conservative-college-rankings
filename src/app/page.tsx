@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import dynamic from "next/dynamic";
 import type { School, SortField, SortDir } from "@/lib/types";
-import { biasColor, biasLabel, TIERS } from "@/lib/types";
+import { biasColor, biasLabel, TIER_COLORS, TIERS } from "@/lib/types";
 
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
@@ -75,22 +75,32 @@ export default function RankingsPage() {
   const avgDem = avg("fecDemPct");
   const avgFire = avg("fireRank");
 
-  // Timeline: average bias by phase for filtered schools
-  const timelineData = useMemo(() => {
+  // Timeline: one line per tier (among filtered schools), avg bias by phase
+  const timelineByTier = useMemo(() => {
     const phases = [
       { label: "Phase 1\n(2012–19)", key: "phase1" as const },
       { label: "Phase 2\n(2020–23)", key: "phase2" as const },
       { label: "Phase 3\n(2024–26)", key: "phase3" as const },
     ];
     const x = phases.map((p) => p.label);
-    const vals = phases.map((p) => {
-      const numbers = filtered
-        .map((s) => s[p.key])
-        .filter((v): v is number => v != null);
-      if (numbers.length === 0) return null;
-      return numbers.reduce((a, b) => a + b, 0) / numbers.length;
-    });
-    return { x, y: vals };
+    const byTier = new Map<string, School[]>();
+    for (const s of filtered) {
+      const list = byTier.get(s.tier) ?? [];
+      list.push(s);
+      byTier.set(s.tier, list);
+    }
+    const series: { tier: string; y: (number | null)[] }[] = [];
+    for (const [tier, tierSchools] of byTier) {
+      const y = phases.map((p) => {
+        const numbers = tierSchools
+          .map((s) => s[p.key])
+          .filter((v): v is number => v != null);
+        if (numbers.length === 0) return null;
+        return numbers.reduce((a, b) => a + b, 0) / numbers.length;
+      });
+      if (y.some((v) => v != null)) series.push({ tier, y });
+    }
+    return { x, series };
   }, [filtered]);
 
   const SortIcon = ({ field }: { field: SortField }) => (
@@ -159,42 +169,40 @@ export default function RankingsPage() {
         </div>
       </div>
 
-      {/* Timeline — reflects current filter selection */}
-      {timelineData.y.some((v) => v != null) && (
+      {/* Timeline — one line per tier (selected schools) */}
+      {timelineByTier.series.length > 0 && (
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-6">
           <h2 className="text-lg font-semibold text-gray-200 mb-1">
-            Bias Over Time (Selected Schools)
+            Bias Over Time by Tier
           </h2>
           <p className="text-sm text-gray-500 mb-4">
-            Average Twitter bias score by phase for the {filtered.length} school
-            {filtered.length !== 1 ? "s" : ""} currently selected.
+            Average Twitter bias score by phase for each tier in the current
+            selection ({filtered.length} school
+            {filtered.length !== 1 ? "s" : ""}).
           </p>
           <Plot
-            data={[
-              {
-                x: timelineData.x,
-                y: timelineData.y.map((v) => v ?? undefined),
-                mode: "lines+markers+text",
-                text: timelineData.y.map((v) =>
-                  v != null ? v.toFixed(1) : ""
-                ),
-                textposition: "top center",
-                line: {
-                  color: biasColor(
-                    timelineData.y.find((v) => v != null) ?? undefined
-                  ),
-                  width: 3,
-                },
-                marker: { size: 12 },
-                textfont: { color: "#ccc" },
+            data={timelineByTier.series.map(({ tier, y }) => ({
+              x: timelineByTier.x,
+              y: y.map((v) => v ?? undefined),
+              mode: "lines+markers+text" as const,
+              text: y.map((v) => (v != null ? v.toFixed(1) : "")),
+              textposition: "top center" as const,
+              name: tier,
+              line: {
+                color: TIER_COLORS[tier] ?? "#888",
+                width: 3,
               },
-            ]}
+              marker: { size: 10 },
+              textfont: { color: "#ccc" },
+            }))}
             layout={{
-              height: 280,
+              height: 320,
               margin: { t: 20, b: 50, l: 50, r: 30 },
               paper_bgcolor: "transparent",
               plot_bgcolor: "transparent",
               font: { color: "#ccc" },
+              showlegend: true,
+              legend: { orientation: "h", y: 1.08, x: 0 },
               xaxis: {
                 gridcolor: "#333",
                 tickfont: { size: 11 },
