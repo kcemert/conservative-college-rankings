@@ -93,7 +93,7 @@ export default function SchoolProfilePage() {
             {school.name}
             {school.highlight && (
               <span className="ml-3 text-sm bg-red-900/40 text-red-400 px-2 py-1 rounded align-middle">
-                Highlight
+                Conservative Highlight
               </span>
             )}
           </h1>

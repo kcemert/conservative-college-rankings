@@ -15,7 +15,7 @@ def _tier(rank):
     try:
         r = int(rank)
     except (ValueError, TypeError):
-        return "Highlight"
+        return "Conservative Highlight"
     if r <= 25: return "Top 25"
     if r <= 50: return "26-50"
     if r <= 100: return "51-100"

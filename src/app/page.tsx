@@ -188,7 +188,7 @@ export default function RankingsPage() {
                   </a>
                   {s.highlight && (
                     <span className="ml-2 text-xs bg-red-900/40 text-red-400 px-1.5 py-0.5 rounded">
-                      highlight
+                      conservative highlight
                     </span>
                   )}
                 </td>

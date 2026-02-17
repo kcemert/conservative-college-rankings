@@ -31,10 +31,10 @@ export const TIER_COLORS: Record<string, string> = {
   "26-50": "#67a9cf",
   "51-100": "#d1e5f0",
   "101-150": "#fddbc7",
-  Highlight: "#b2182b",
+  "Conservative Highlight": "#b2182b",
 };
 
-export const TIERS = ["Top 25", "26-50", "51-100", "101-150", "Highlight"];
+export const TIERS = ["Top 25", "26-50", "51-100", "101-150", "Conservative Highlight"];
 
 export function biasColor(score?: number): string {
   if (score == null) return "#666";
