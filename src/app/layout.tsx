@@ -45,7 +45,7 @@ export default function RootLayout({
         <header className="bg-[#1A1A2E] border-b border-gray-800 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="/" className="text-xl font-bold tracking-tight">
-            <span className="text-blue-400">Conservative</span>{" "}
+            <span className="text-red-500">Conservative</span>{" "}
             <span className="text-gray-300">College Rankings</span>
             </a>
             <nav className="hidden md:flex gap-1">

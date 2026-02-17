@@ -178,7 +178,11 @@ export default function RankingsPage() {
                 <td className="px-3 py-2.5">
                   <a
                     href={`/school/${s.handle}`}
-                    className="text-blue-400 hover:text-blue-300 font-medium"
+                    className={`hover:opacity-80 font-medium ${
+                      (s.biasScore ?? 0) > 15
+                        ? "text-red-400 hover:text-red-300"
+                        : "text-blue-400 hover:text-blue-300"
+                    }`}
                   >
                     {s.name}
                   </a>
