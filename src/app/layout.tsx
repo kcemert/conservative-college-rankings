@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: {
@@ -24,15 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-const NAV_ITEMS = [
-  { href: "/", label: "Rankings" },
-  { href: "/school", label: "School Profile" },
-  { href: "/gallery", label: "Charts" },
-  { href: "/compare", label: "Compare" },
-  { href: "/explore", label: "Explore" },
-  { href: "/methodology", label: "Methodology" },
-];
-
 export default function RootLayout({
   children,
 }: {
@@ -41,26 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="bg-gray-950 text-gray-100 min-h-screen flex flex-col">
-        {/* Header */}
-        <header className="bg-[#1A1A2E] border-b border-gray-800 sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="/" className="text-xl font-bold tracking-tight">
-            <span className="text-red-500">Conservative</span>{" "}
-            <span className="text-gray-300">College Rankings</span>
-            </a>
-            <nav className="hidden md:flex gap-1">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="px-3 py-1.5 rounded-md text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </header>
+        <Header />
 
         {/* Main */}
         <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
