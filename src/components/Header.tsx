@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const NAV_ITEMS = [
   { href: "/", label: "Rankings" },
+  { href: "/rank", label: "Rank Your Way" },
   { href: "/school", label: "School Profile" },
   { href: "/gallery", label: "Charts" },
   { href: "/compare", label: "Compare" },
