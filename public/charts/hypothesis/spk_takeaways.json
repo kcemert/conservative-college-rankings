@@ -1,0 +1,42 @@
+{
+  "S1": {
+    "title": "Does Speaker Political Mix Track Twitter Bias?",
+    "points": [
+      "Correlation r = 0.21 between Twitter bias and speaker Dem %",
+      "46 schools with 2+ classified speakers",
+      "Schools with liberal Twitter bias tend to invite more Dem-affiliated speakers"
+    ]
+  },
+  "S2": {
+    "title": "Do Liberal Schools Invite More Democratic Speakers?",
+    "points": [
+      "Liberal schools: 209 Dem vs 96 Rep speakers (69% Dem)",
+      "Conservative schools: 24 Dem vs 1 Rep speakers",
+      "Clear partisan sorting in speaker selection"
+    ]
+  },
+  "S3": {
+    "title": "Who Are the Most Popular Commencement Speakers?",
+    "points": [
+      "Top 25 speakers since 2000: 1 Dem-affiliated, 5 Rep-affiliated",
+      "Most invited: Kofi Annan (24 appearances)",
+      "High concentration of repeat speakers across schools"
+    ]
+  },
+  "S4": {
+    "title": "Has Speaker Political Lean Shifted Over Decades?",
+    "points": [
+      "2020s: 100% Democrat-affiliated among classified speakers",
+      "Data covers 1960s through 2020s",
+      "Note: Classification is heuristic-based; many speakers remain unclassified"
+    ]
+  },
+  "S5": {
+    "title": "Do Liberal and Conservative Schools Share Speakers?",
+    "points": [
+      "361 speakers appeared at both liberal and conservative schools",
+      "Liberal schools: 755 unique speakers; Conservative: 361",
+      "Overlap rate: 48% of all speakers"
+    ]
+  }
+}

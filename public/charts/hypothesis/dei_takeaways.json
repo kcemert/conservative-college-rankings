@@ -1,0 +1,42 @@
+{
+  "D1": {
+    "title": "Does DEI Staff Size Predict Twitter Bias?",
+    "points": [
+      "Correlation r = -0.13 between DEI staff count and Twitter liberal bias",
+      "139 of 152 schools with DEI data lean liberal on Twitter",
+      "Schools with 20+ DEI staff are exclusively in the liberal range"
+    ]
+  },
+  "D2": {
+    "title": "Do Progressive Schools Have Larger DEI Offices?",
+    "points": [
+      "Full Progressive schools average 7.6 DEI staff",
+      "Full Traditional schools average 4.8 DEI staff",
+      "Clear gradient: more progressive quadrant = more DEI staff"
+    ]
+  },
+  "D3": {
+    "title": "Do Elite Schools Have Bigger DEI Offices?",
+    "points": [
+      "Correlation r = 0.03 between rank and DEI staff",
+      "DEI staffing shows wide variance at every rank tier",
+      "Some lower-ranked schools have among the largest DEI offices"
+    ]
+  },
+  "D4": {
+    "title": "Does DEI Staffing Track Employee Donation Patterns?",
+    "points": [
+      "Correlation r = 0.18 between Dem donation % and DEI staff count",
+      "Nearly all schools with large DEI offices donate >80% Democratic",
+      "FEC data provides independent financial validation of DEI commitment"
+    ]
+  },
+  "D5": {
+    "title": "Does Having a DEI Office Page Signal Liberal Bias?",
+    "points": [
+      "Schools with DEI pages average -18.5 bias vs -13.0 without",
+      "Gap of 5.4 points \u2014 DEI schools lean more liberal",
+      "105 schools have discoverable DEI pages, 47 do not"
+    ]
+  }
+}

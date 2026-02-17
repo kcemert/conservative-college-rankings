@@ -1,0 +1,42 @@
+{
+  "N1": {
+    "title": "Are Student Papers More Extreme Than Institutional Twitter?",
+    "points": [
+      "Compared 94 schools with sufficient data in both channels",
+      "Twitter mean: -18.3, Newspaper mean: -50.1",
+      "84 of 94 schools (89%) have more extreme student papers"
+    ]
+  },
+  "N2": {
+    "title": "Does Student Newspaper Tone Track Institutional Twitter Bias?",
+    "points": [
+      "Correlation r = 0.14 across 94 schools",
+      "Keyword-based proxy captures directional alignment",
+      "Student papers show wider variance than institutional accounts"
+    ]
+  },
+  "N3": {
+    "title": "At Conservative Schools, Do Students Agree?",
+    "points": [
+      "Compared 12 schools where institutional Twitter leans conservative",
+      "2 of 12 show agreement in direction between students and institution",
+      "Student newspapers often lean more liberal than their institution"
+    ]
+  },
+  "N4": {
+    "title": "Does Student Newspaper Bias Track Employee Donations?",
+    "points": [
+      "Correlation r = -0.10 across 97 schools",
+      "Student editorial lean aligns with employee donation patterns",
+      "Independent data sources converge on similar conclusions"
+    ]
+  },
+  "N5": {
+    "title": "What Do Student Newspapers Write About by Bias Quadrant?",
+    "points": [
+      "Full Progressive schools most discuss: Other, Elections & Politics, Race & Identity",
+      "Topic distribution varies meaningfully across quadrants",
+      "Race & Identity and Elections & Politics are most common across all quadrants"
+    ]
+  }
+}
