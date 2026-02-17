@@ -6,7 +6,7 @@ const SECTIONS = [
     href: "/rankings",
     title: "Rankings",
     description: "155 universities ranked by Twitter bias, FEC donations, FIRE scores, and more. Sort, filter, and explore.",
-    image: "/charts/core/bias_matrix_2x2.png",
+    image: "/home-cards/rankings.png",
   },
   {
     href: "/rank",
