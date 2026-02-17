@@ -17,10 +17,10 @@ export default function Header() {
   return (
     <header className="bg-[#1A1A2E] border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Mobile hamburger */}
+        {/* Hamburger — visible on all sizes */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 -ml-2 rounded-lg hover:bg-gray-800 transition-colors"
+          className="p-2 -ml-2 rounded-lg hover:bg-gray-800 transition-colors"
           aria-label="Toggle menu"
         >
           <svg
@@ -53,36 +53,25 @@ export default function Header() {
           <span className="text-gray-300">College Rankings</span>
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex gap-1">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="px-3 py-1.5 rounded-md text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* Spacer so logo stays centered on mobile */}
-        <div className="w-9 md:hidden" />
+        {/* Spacer to keep logo centered */}
+        <div className="w-9" />
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Dropdown — same on mobile and desktop */}
       {open && (
-        <nav className="md:hidden border-t border-gray-800 bg-[#1A1A2E]">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="block px-6 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800/50 transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="border-t border-gray-800 bg-[#1A1A2E]">
+          <div className="max-w-7xl mx-auto">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block px-6 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800/50 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </nav>
       )}
     </header>
