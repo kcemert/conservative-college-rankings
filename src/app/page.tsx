@@ -12,13 +12,13 @@ const SECTIONS = [
     href: "/rank",
     title: "Rank Your Way",
     description: "Blend US News 2026 rank with our data. Adjust how much conservative values matter and see your personalized list.",
-    image: "/charts/cultural/normalization_by_tier.png",
+    image: "/home-cards/rank-your-way.png",
   },
   {
     href: "/school",
     title: "School Profile",
     description: "Deep dive on any school: bias gauge, FEC, FIRE, DEI, phase trends, and sample tweets.",
-    image: "/charts/core/donation_pie_grid_top.png",
+    image: "/home-cards/school-profile.png",
   },
   {
     href: "/gallery",
@@ -30,13 +30,13 @@ const SECTIONS = [
     href: "/compare",
     title: "Compare",
     description: "Side-by-side comparison of 2–4 schools with radar charts and metric breakdowns.",
-    image: "/charts/cultural/fire_crossref.png",
+    image: "/home-cards/compare.png",
   },
   {
     href: "/explore",
     title: "Explore",
     description: "Interactive scatter plots and the 2×2 bias matrix. Hover, zoom, discover patterns.",
-    image: "/charts/core/bias_map.png",
+    image: "/home-cards/explore.png",
   },
   {
     href: "/methodology",
